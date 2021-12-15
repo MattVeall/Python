@@ -5,7 +5,7 @@ from warnings import catch_warnings
 msg = "Hello world how are you doing today!!!"
 print(msg)
 
-# Encryption level, every character is 8-bit so divide by 8. Create character pool to make a list of characters to pull from.
+# Encryption level, every character is 8-bit divide by 8. Create character pool to make a list of characters to pull from.
 encryption_level = 128 // 8 
 char_pool = ''
 
@@ -27,7 +27,7 @@ encrypted_msg = ''
 for char in msg:
     encrypted_char = ord(char) ^ ord(key[key_index])
     encrypted_msg += chr(encrypted_char)
-    # Makes sure when we get to the end of the key, it loops back around and start the process again.
+    # Makes sure when we get to the end of the key, it loops back around and starts the process again.
     if key_index >= max_key_index:
         key_index = 0
     else:
