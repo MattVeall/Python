@@ -7,8 +7,6 @@
 # Tuples are written with round brackets.
 
 # Create a Tuple:
-import this
-
 
 thistuple = ("apple", "banana", "cherry")
 print(thistuple)
