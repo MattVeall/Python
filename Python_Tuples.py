@@ -7,6 +7,9 @@
 # Tuples are written with round brackets.
 
 # Create a Tuple:
+import this
+
+
 thistuple = ("apple", "banana", "cherry")
 print(thistuple)
 
@@ -100,3 +103,73 @@ print(mytuple5)
 mytuple6 = ("apple", "banana", "cherry")
 del mytuple6
 print(mytuple6) # This will raise an error because the tuple no longer exists
+
+# ---------------------------------------------------------------------------------------------------
+
+# Unpacking a Tuples
+# When we create a tuple, we normally assign values to it. This is called "packing" a tuple:
+fruits = ("apple", "banana", "cherry")
+# But, in Python, we are also allowed to extend the values back into variables. This is called "unpacking":
+fruits = ("apple", "banana", "cherry")
+
+(green, yellow, red) = fruits
+
+print(green)
+print(yellow)
+print(red)
+
+# If the number of variables is less than the number of values, you can add an * 
+# to the variable name and the values will be assigned to the variable as a list:
+fruits = ("apple", "banana", "cherry", "strawberry", "raspberry")
+
+(blue, orange, *purple) = fruits
+
+print(blue)
+print(orange)
+print(purple)
+
+# If the asterisk is added to another variable name than the last, 
+# Python will assign values to the variable until the number of values left matches the number of variables left.
+fruits = ("apple", "mango", "banana", "orange", "cherry")
+
+(blue, *green, red) = fruits
+
+print(blue)
+print(green)
+print(red)
+
+# You can loop through the tuple items by using a for loop.
+thistuple2 = ("apple", "banana", "orange")
+for x in thistuple2:
+    print(x)
+
+# You can also loop through the tuple items by referring to their index number.
+# Use the range() and len() functions to create a suitable iterable
+
+thistuple3 = ("apple", "banana", "cheery")
+for i in range(len(thistuple3)):
+    print(thistuple3[1])
+
+# You can loop through the list items by using a while loop
+#Use the len() function to determine the length of the tuple, then start at 0 and loop your way through the tuple items by refering to their indexes.
+#Remember to increase the index by 1 after each iteration.
+
+thistuple4 = ("apple", "banana", "orange")
+i = 0
+while i < len(thistuple4):
+    print(thistuple4[i])
+    i = i + 1 
+
+# ------------------------------------------------------------------------------------------
+# To join two or more tuples you can use the + operator:
+tuple1 = ("a", "b", "c")
+tuple2 = (1, 2, 3)
+
+tuple3 = tuple1 + tuple2
+print(tuple3)
+
+# If you want to multiply the content of a tuple a given number of times, you can use the * operator:
+fruits = ("apple", "banana", "cherry")
+mytuple = fruits * 2
+
+print(mytuple)
