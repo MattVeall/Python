@@ -9,7 +9,7 @@ def main():
     server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server.bind((IP, Port))
     server.listen(5)
-    print(f'[*] Listening on {IP}:{PORT}')
+    print(f'[*] Listening on {IP}:{Port}')
 
     while True:
         client, address = server.accept()
