@@ -1,7 +1,7 @@
 import socket
 import os
 
-HOST = 'IP.Goes>here'
+HOST = 'IP.Goes.here'
 
 def main():
     if os.name == 'nt':
