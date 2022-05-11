@@ -14,7 +14,7 @@ def main():
     sniffer.setsockopt(socket.IPPROTO_IP, socket.IP_HDRINCL, 1)
 
     if os.name == "nt":
-        Sniffer.ioctl(socket.SIO_RCVALL, socket.RCVALL_OFF)
+        sniffer.ioctl(socket.SIO_RCVALL, socket.RCVALL_OFF)
 
 
 if __name__ == "__main__":
