@@ -1,4 +1,4 @@
-import os
+import os,webbrowser
 
 
 # Check to see if directory exist. If directory doesn't exist create it.
@@ -10,10 +10,10 @@ if not check_folder:
     os.makedirs(CTI_dir)
     print('Creating Directory... all results will be saved in: ', CTI_dir)
 else:
-    print('All results will be logged in : ', CTI_dir)
+    print('All results will be logged in: ', CTI_dir)
 
 
-print('Enter domain to search for cyber threat intelligence: ')
+print('Enter domain to begin enumeration: ')
 domain = input()
 
 def permutations():
@@ -35,7 +35,9 @@ def digPermutations():
 def shodan():
     # Run shodan for all avialble information on a domain and save outout to file.
     
-    os.system('shodan domain ' + domain + ' > ~/Documents/CTI_Report/shodan.output ')
+    webbrowser.open('https://www.shodan.io/search?query=ssl%3A'+ domain)
+    os.system('shodan domain ' + domain + ' > ~/Documents/CTI_Report/shodan_domain.output ')
+    os.system('shodan search ssl:' + domain + '> ~/Documents/CTI_Report/shodan_ssl.output')
     print('Shodan domain lookup complete ')
     print('Now commencing amass subdomain discovery for ' + domain)
 
