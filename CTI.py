@@ -1,4 +1,4 @@
-import os,webbrowser
+import os, webbrowser
 
 
 # Check to see if directory exist. If directory doesn't exist create it.
@@ -68,4 +68,5 @@ shodan()
 amass()
 digSubdomains()
 emailHarvester()
+webbrowser.open('http://secure.darkwebid.com/user/login?destination=/home')
 print('CTI gathering complete! See ' + CTI_dir + ' for outputs' )
